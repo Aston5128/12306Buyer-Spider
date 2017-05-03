@@ -1,7 +1,7 @@
 import json
 import re
 import requests
-from requests.packages.urllib3.exceptions import InsecureRequestWarning  # 去除 Warning 用
+from requests.packages.urllib3.exceptions import InsecureRequestWarning  # 忽略 Warning 用
 
 # 此处为整个查询系统需要用到的属性
 departure_date = '2017-05-04'  # 出发日期
@@ -14,7 +14,7 @@ with open('CityCode.txt', 'r', encoding='gb18030') as city_code:
 from_station = re.findall(from_station_CHS + '\|(.*?)\|', city)[0]  # 将出发地改为相应的城市代码
 to_station = re.findall(to_station_CHS + '\|(.*?)\|', city)[0]  # 将目的地地改为相应的城市代码
 
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # 去除 Warning 用
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # 忽略 Warning 用
 html = requests.get('https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date=' + departure_date + '&left'
                     'TicketDTO.from_station=' + from_station + '&leftTicketDTO.to_station=' + to_station + '&purpose_co'
                     'des=ADULT', verify=False).text
