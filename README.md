@@ -1,5 +1,5 @@
 # 12306Buyer-spider
-A web spider for train schedule crawl
+A web spider for train schedule crawl and buy specific ticket chosen by you
 
 Updatatime：3/5/2017 20:18 by Aston5128
 
