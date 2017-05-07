@@ -85,4 +85,4 @@ class Crawl:
 
 
 if __name__ == '__main__':
-    Crawl('2017-05-28', '宜春', '鹰潭').getData()
+    Crawl('2017-05-28', '出发地', '目的地').getData()
