@@ -28,6 +28,7 @@ class Crawl:
         i = 0  # 火车票的序号，方便选择车次
         for item in js['data']['result']:
             ticket = item.split('|')[1:]  # 以字符 | 分割字符串，得到火车票的信息列表
+            if ticket[0] != '预订': continue  # 此处防止备注栏不是'预订'，目的是使序号与 12306buyer 中的余票
             ticket_list = {
                 '序号': str(i),
                 '车次': ticket[2],
@@ -84,4 +85,4 @@ class Crawl:
 
 
 if __name__ == '__main__':
-    Crawl('2017-05-06', '南昌', '宜春').getData()
+    Crawl('2017-05-28', '宜春', '鹰潭').getData()
